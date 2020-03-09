@@ -62,12 +62,18 @@
 
                                 <hr>
 
-                                <h4>Comentarios</h4>
-                                @foreach($image->comments as $comment)
+
+
+                            @foreach($image->comments as $comment)
                                     <div class="comment">
                                         <hr class="bg-primary">
                                         <span class="nickname">@.{{ $comment->user->nick }}</span>
                                         <p>{{$comment->content}}</p>
+                                        @if (Auth::check() && ($comment->user_id == Auth::user()->id || $comment->image->id == Auth::user()->id))
+                                        <a href="{{route('comment.delete', ['id'=>$comment->id  ])}}" class="btn btn-sm btn-danger">
+                                            Eliminar
+                                        </a>
+                                        @endif
                                     </div>
                                 @endforeach
                             </div>
