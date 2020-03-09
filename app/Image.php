@@ -13,7 +13,7 @@ class Image extends Model
     //relacion One to many
 
     public function comments(){
-        return $this->hasMany('App\Comment');
+        return $this->hasMany('App\Comment')->orderBy('id', 'desc');
     }
 
     // One to many

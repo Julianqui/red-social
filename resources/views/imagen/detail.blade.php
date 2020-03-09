@@ -59,7 +59,19 @@
 
 
                                 </form>
+
+                                <hr>
+
+                                <h4>Comentarios</h4>
+                                @foreach($image->comments as $comment)
+                                    <div class="comment">
+                                        <span class="nickname">@.{{ $comment->user->nick }}</span>
+                                        <p>{{$comment->content}}</p>
+                                    </div>
+                                @endforeach
                             </div>
+
+
 
                         </div>
                     </div>
