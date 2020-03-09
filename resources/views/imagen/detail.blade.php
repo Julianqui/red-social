@@ -65,6 +65,7 @@
                                 <h4>Comentarios</h4>
                                 @foreach($image->comments as $comment)
                                     <div class="comment">
+                                        <hr class="bg-primary">
                                         <span class="nickname">@.{{ $comment->user->nick }}</span>
                                         <p>{{$comment->content}}</p>
                                     </div>

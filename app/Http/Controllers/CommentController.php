@@ -21,7 +21,7 @@ class CommentController extends Controller
 
         $user= \Auth::user();
         $image_id = $request->input('image_id');
-        $content = $request->input('comtemt');
+        $content = $request->input('content');
 
         //Asigno los valores a mi nuevo objeto a guardar
         $comment = new Comment();

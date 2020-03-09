@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Comment extends Model
 {
-    public $timestamps = false;
+
 
     protected $table = 'comments';
 
@@ -18,4 +18,5 @@ class Comment extends Model
     public function image(){
         return $this->belongsTo('App\Image', 'image_id');
     }
+    public $timestamps = false;
 }
